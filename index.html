@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Fence Security</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Login Page -->
+  <div id="login-page" class="page active">
+    <div class="login-box">
+      <h2 id="login-title">Smart Fence Security</h2>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="login()">Login</button>
+      <p id="login-error" class="error"></p>
+    </div>
+  </div>
+
+  <!-- Dashboard Page -->
+  <div id="dashboard-page" class="page">
+    <header>
+      <h1 id="title">Smart Electric Fence Security System</h1>
+      <div class="header-controls">
+        <button id="theme-toggle"><i class="fas fa-adjust"></i></button>
+        <div class="burger-menu" onclick="toggleMenu()">☰</div>
+        <div id="language-menu" class="dropdown">
+          <button onclick="setLanguage('en')">English</button>
+          <button onclick="setLanguage('ta')">தமிழ்</button>
+          <button onclick="setLanguage('te')">తెలుగు</button>
+          <button onclick="setLanguage('kn')">ಕನ್ನಡ</button>
+          <button onclick="setLanguage('ml')">മലയാളം</button>
+        </div>
+        <button onclick="logout()"><i class="fas fa-sign-out-alt"></i></button>
+      </div>
+    </header>
+
+    <section class="live-data">
+      <h2 id="live-data-title">🔌 Live Sensor Data</h2>
+      <div class="sensor">
+        <i class="fas fa-bolt icon"></i>
+        <p id="voltage-label">Voltage: <span id="voltage">0</span> V</p>
+        <div class="progress"><div id="voltage-bar" class="progress-bar"></div></div>
+      </div>
+      <div class="sensor">
+        <i class="fas fa-charging-station icon"></i>
+        <p id="current-label">Current: <span id="current">0</span> A</p>
+        <div class="progress"><div id="current-bar" class="progress-bar"></div></div>
+      </div>
+    </section>
+
+    <section class="features">
+      <h2 id="features-title">🛡️ Security Features</h2>
+      <ul id="features-list"></ul>
+    </section>
+
+    <section class="alerts">
+      <h2 id="alerts-title">🚨 Alerts & Notifications</h2>
+      <p id="alert-box">No alerts currently.</p>
+    </section>
+
+    <section class="cctv">
+      <h2 id="cctv-title">📷 CCTV Capture</h2>
+      <div class="cctv-box">[ Live Image Placeholder ]</div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
